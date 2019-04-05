@@ -1,0 +1,47 @@
+
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<img src="/media/banner.png" width=100%>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/index">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/aboutus">About us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contactus">Contact us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/movies">Movie list</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/audios">audios</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/videos">videos</a>
+    </li>
+  </ul>
+  <form class="form-inline" action="/search_list" method="GET">
+    <input class="form_control mr-sm2" type="text" placeholder="Search Song" name="query" value={{query.GET.get}}>
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

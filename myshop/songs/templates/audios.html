@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <p>All Mediia Audio files are shown here</p>
+  <table width=100% border=1>
+    {% for i in alist %}
+    <tr>
+      <td width=50%>
+        Movie={{i.movie.title}}<br>
+        Director={{i.movie.director}}<br>
+        Year={{i.movie.year}}<br>
+        <img src="{{i.movie.photo.url}}" alt="moviephoto" width=150 height=150>
+        </td>
+
+<td width=50%>
+  Title={{i.title}}<br>
+<!----------------to play or download audio song----->
+Genre={% if i.genre == 'H' %} Happy
+{% elif i.genre == 'S' %} Sad
+{% elif i.genre == 'D' %} Devotional
+{% elif i.genre == 'C' %} Classic
+{% else %} Melody
+{% endif %}<br>
+
+
+<br>
+<div style="text-align:center">
+  <audio controls width=300 height=200>
+    <source src="/media/{{i.song}}"/>
+    </audio>
+    <a href="/media/{{i.song}}" download><br>
+      <button>Download-audio</button>
+      </a>
+
+
+</div>
+</td>
+{% endfor %}
+{% endblock %}
+</table>

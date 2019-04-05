@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <p>Search result</p>
+  <hr>
+  {% for i in match1 %}
+  Movie={{i.title}} Director={{i.director}}
+  {% endfor %}
+  {% for i in match2 %}
+  Audio Song={{i.title}} Movie={{i.movie.title}}
+  {% endfor %}
+  {% for i in match3 %}
+  Video Song={{i.title}} Movie={{i.movie.title}}
+  {% endfor %}
+  
+</div>
+{% endblock %}}
